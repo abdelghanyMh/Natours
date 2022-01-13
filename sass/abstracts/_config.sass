@@ -1,0 +1,21 @@
+
+$light_green: #7ed56f
+$medium_green: #55c57a
+$dark_green: #28b485
+$grey:#777
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700)
+
+@function get-fweight($weight)
+    @return map-get($font-weights,$weight)
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+body
+    font-family: "lato",sans-serif
+    font-weight: get-fweight('regular')
+    font-size: 1rem
+    line-height: 1.7
+    color:$grey
