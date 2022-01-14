@@ -1,22 +1,50 @@
 @use '../abstracts'
 
 .btn
+    &__animated
+        @include abstracts.animat_fadeIn($direction: 'up')
+        animation-fill-mode: backwards
+
     &:visited,&:link
         text-transform: uppercase
         text-decoration: none
+        font-weight: abstracts.get-fweight('medium')
+
         border-radius: 35px
 
         display: inline-block
         padding: 1rem 40px
 
+        position: relative
+
         transition: all .2s
-    &:hover
-        transform: translateY(-3px)
-        box-shadow: 0 10px 20px transparentize(#000,0.7)
     &:active
         transform: translateY(-1px)
         box-shadow: 0 5px 10px transparentize(#000,0.7)
+    &:hover
+        transform: translateY(-3px)
+        box-shadow: 0 10px 20px transparentize(#000,0.7)
+        &::after
+            transform: scaleX(1.4) scaleY(1.6)
+            opacity: 0
+
+    &::after
+        content: ""
+        display: inline-block
+
+        width: 100%
+        height: 100%
+        border-radius: 35px
+
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+
+        transition: all .4s
 
 .btn-white
     background-color: abstracts.$white
     color: abstracts.$grey
+    &::after
+        background-color: abstracts.$white
