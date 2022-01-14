@@ -34,11 +34,13 @@ header {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 .heading-primary > * {
   display: block;
@@ -75,8 +77,30 @@ header {
   }
 }
 
+.btn:visited, .btn:link {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 35px;
+  display: inline-block;
+  padding: 1rem 40px;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #2b343a;
+}
+
 body {
-  color: #08293d;
+  color: #2b343a;
   padding: 30px;
 }
 

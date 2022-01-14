@@ -1,0 +1,22 @@
+@use '../abstracts'
+
+.btn
+    &:visited,&:link
+        text-transform: uppercase
+        text-decoration: none
+        border-radius: 35px
+
+        display: inline-block
+        padding: 1rem 40px
+
+        transition: all .2s
+    &:hover
+        transform: translateY(-3px)
+        box-shadow: 0 10px 20px transparentize(#000,0.7)
+    &:active
+        transform: translateY(-1px)
+        box-shadow: 0 5px 10px transparentize(#000,0.7)
+
+.btn-white
+    background-color: abstracts.$white
+    color: abstracts.$grey
