@@ -47,10 +47,32 @@ header {
 .heading-primary__main {
   font-size: 4.5rem;
   letter-spacing: 20px;
+  animation: animate__fadeInleft 0.9s ease-in 0.1s;
+}
+@keyframes animate__fadeInleft {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 .heading-primary__sub {
   font-size: 1.5rem;
   letter-spacing: 13px;
+  animation: animate__fadeInright 0.9s ease-in 0.1s;
+}
+@keyframes animate__fadeInright {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
 body {

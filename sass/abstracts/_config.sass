@@ -3,6 +3,8 @@ $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 @function get-fweight($weight)
     @return map-get($font-weights,$weight)
 
+
+
 *
     box-sizing: border-box
     margin: 0
@@ -12,3 +14,23 @@ body
     font-weight: get-fweight('regular')
     font-size: 1rem
     line-height: 1.7
+
+// animations
+@mixin animat_fadeIn($direction)
+    $animat_name: animate__fadeIn+$direction
+    $start_postion: 0
+
+    animation: $animat_name .9s ease-in .1s
+
+    @if $direction == 'left'
+        $start_postion: -20%
+    @else
+        $start_postion: 20%
+
+    @keyframes  #{$animat_name}
+        from
+            transform: translateX($start_postion)
+            opacity: 0
+        to
+            transform: translateX(0%)
+            opacity: 1

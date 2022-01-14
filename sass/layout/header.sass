@@ -32,7 +32,10 @@ header
     &__main
         font-size: 4.5rem
         letter-spacing: 20px
+        @include abstracts.animat_fadeIn($direction: 'left')
 
     &__sub
         font-size: 1.5rem
         letter-spacing: 13px
+        @include abstracts.animat_fadeIn($direction: 'right')
+
