@@ -1,5 +1,5 @@
 @use '../abstracts'
-
+$default-font-size: 1.6rem
 $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 
 @function get-fweight($weight)
@@ -10,16 +10,6 @@ body
     font-weight: get-fweight('regular')
     font-size: 1rem
     line-height: 1.7
-
-.btn
-    &:visited,&:link
-        text-transform: uppercase
-        text-decoration: none
-        font-weight: get-fweight('medium')
-
-.btn-white
-    color: abstracts.$dark_grey
-
 .text-box
     position: absolute
     top: 40%
@@ -61,3 +51,11 @@ body
         transform: skewY(2deg) scale(1.1)
         text-shadow: .5rem 1rem 2rem transparentize(abstracts.$dark,.6 )
 
+.infos
+    padding: 0px 5rem
+    .heading-tertiary
+        font-size: 1.2rem
+        font-weight: get-fweight('bold')
+        text-transform: uppercase
+    .paragraph:not(:last-child)
+        margin-bottom: 3rem

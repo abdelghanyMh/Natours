@@ -1,12 +1,19 @@
 @use '../abstracts'
+@use '../base'
+$transparen-amount: 0.2
 
+%btn-default-text-style
+    text-transform: uppercase
+    text-decoration: none
+    font-weight: base.get-fweight('medium')
 .btn
     &__animated
         @include abstracts.animat_fadeIn($direction: 'up')
         animation-fill-mode: backwards
 
     &:visited,&:link
-      
+        @extend %btn-default-text-style
+
         border-radius: 35px
 
         display: inline-block
@@ -23,7 +30,7 @@
             transform: scaleX(1.4) scaleY(1.6)
             opacity: 0
     &:active
-        transform: !important translateY(-1px)
+        transform: translateY(-1px)
         box-shadow: 0 5px 10px transparentize(#000,0.7)
 
     &::after
@@ -42,6 +49,54 @@
         transition: all .4s
 
 .btn-white
+    color: abstracts.$dark_grey
     background-color: abstracts.$white
     &::after
         background-color: abstracts.$white
+
+.btn-text
+    @extend %btn-default-text-style
+    display: inline-block
+    color: abstracts.$dark_green
+    padding: 3px
+    border-bottom: 1px solid abstracts.$dark_green
+    transition: all .2s
+
+    position: relative
+    z-index: 999
+    &::before,&::after
+        content: ""
+        position: absolute
+
+        width: 0
+        height: 100%
+        transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1)
+
+    &::before
+        z-index: -1
+        transform: translate(-3px,-2px)
+
+        background-color: abstracts.$medium_green
+
+    &::after
+        right: 0
+        transform: translate(0px, -3px)
+
+        border: 1px solid abstracts.$light-yellow
+        border-left: 0
+        border-right: 0
+
+        transition-delay: .5ms
+
+    &:hover
+        color: abstracts.$white
+        transform: translateY(-3px)
+        box-shadow: 0 1rem 2rem transparentize(#000,0.7)
+        border-bottom: 0
+
+        &::before,&::after
+            width: 100%
+
+    &:active
+        transform: translateY(-1px)
+        box-shadow: 0 5px 10px transparentize(#000,0.7)
