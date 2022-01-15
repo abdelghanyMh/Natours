@@ -1,0 +1,28 @@
+@use '../abstracts/colors'
+.composition
+    position: relative
+    &__photo
+        width: 55%
+        box-shadow: 0 1.5rem 4rem rgba(colors.$dark,.4)
+        border-radius: 2px
+        position: absolute
+        z-index: 10
+        transition: all .4s
+        outline-offset: 7px
+        &--p1
+            left: 0
+            top: -1rem
+        &--p2
+            right: 2rem
+            top: 2rem
+        &--p3
+            left: 13%
+            top: 6rem
+        &:hover
+            z-index: 20
+            box-shadow: 1px 5rem 7rem 20px rgb(0 0 0 / 40%)
+            transform: scale(1.05) translateY(-.5rem)
+            outline: 13px solid colors.$dark_green
+
+    &:hover &__photo:not(:hover)
+        transform: scale(.9)
