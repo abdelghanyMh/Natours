@@ -1,0 +1,30 @@
+// animations
+
+@mixin animat_fadeIn($direction)
+    $animat_name: animate__fadeIn__+$direction
+    $axis: 0
+    $start_postion: 0
+
+    animation: $animat_name .7s ease-in .1s
+
+    @if $direction == 'left'
+        $start_postion: -20%
+        $axis: 'X'
+
+    @else if $direction == 'right'
+        $start_postion: 20%
+        $axis: 'X'
+
+    @else if $direction =='up'
+        animation: $animat_name .7s ease-out .3s
+
+        $start_postion: 30%
+        $axis: 'Y'
+
+    @keyframes  #{$animat_name}
+        from
+            transform: translate#{$axis}($start_postion)
+            opacity: 0
+        to
+            transform: translate#{$axis}(0%)
+            opacity: 1

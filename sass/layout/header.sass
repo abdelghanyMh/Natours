@@ -8,6 +8,8 @@ header
     background-image: linear-gradient(to right bottom,transparentize(abstracts.$light_green,$transparen-amount),transparentize(abstracts.$dark_green,$transparen-amount)), url(../img/hero.jpg)
     background-size: cover
     background-position: top
+    background-color: abstracts.$dark_grey
+
     clip-path: polygon(0 0,100% 0 ,100% 75vh,0 100%)
 .logo-box
     position: absolute
@@ -21,25 +23,9 @@ header
     left: 50%
     transform: translate(-50%,-50%)
 
-    text-align: center
 .heading-primary
-
-    color: abstracts.$white
-    text-transform: uppercase
-
     margin-bottom: 60px
-
     & > *
         display: block
-        font-weight: abstracts.get-fweight('regular')
 
-    &__main
-        font-size: 4.5rem
-        letter-spacing: 20px
-        @include abstracts.animat_fadeIn($direction: 'left')
-
-    &__sub
-        font-size: 1.5rem
-        letter-spacing: 13px
-        @include abstracts.animat_fadeIn($direction: 'right')
 

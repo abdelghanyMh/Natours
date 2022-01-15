@@ -6,10 +6,7 @@
         animation-fill-mode: backwards
 
     &:visited,&:link
-        text-transform: uppercase
-        text-decoration: none
-        font-weight: abstracts.get-fweight('medium')
-
+      
         border-radius: 35px
 
         display: inline-block
@@ -18,15 +15,16 @@
         position: relative
 
         transition: all .2s
-    &:active
-        transform: translateY(-1px)
-        box-shadow: 0 5px 10px transparentize(#000,0.7)
+
     &:hover
         transform: translateY(-3px)
         box-shadow: 0 10px 20px transparentize(#000,0.7)
         &::after
             transform: scaleX(1.4) scaleY(1.6)
             opacity: 0
+    &:active
+        transform: !important translateY(-1px)
+        box-shadow: 0 5px 10px transparentize(#000,0.7)
 
     &::after
         content: ""
@@ -45,6 +43,5 @@
 
 .btn-white
     background-color: abstracts.$white
-    color: abstracts.$grey
     &::after
         background-color: abstracts.$white

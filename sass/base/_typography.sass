@@ -1,0 +1,42 @@
+@use '../abstracts'
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700)
+
+@function get-fweight($weight)
+    @return map-get($font-weights,$weight)
+
+
+body
+    font-family: "lato",sans-serif
+    font-weight: get-fweight('regular')
+    font-size: 1rem
+    line-height: 1.7
+
+.btn
+    &:visited,&:link
+        text-transform: uppercase
+        text-decoration: none
+        font-weight: get-fweight('medium')
+
+.btn-white
+    color: abstracts.$dark_grey
+
+
+.text-box
+    text-align: center
+
+.heading-primary
+    text-transform: uppercase
+    color: abstracts.$white
+
+    & > *
+        font-weight: get-fweight('regular')
+    &__main
+        font-size: 4.5rem
+        letter-spacing: 20px
+        @include abstracts.animat_fadeIn($direction: 'left')
+
+    &__sub
+        font-size: 1.5rem
+        letter-spacing: 13px
+        @include abstracts.animat_fadeIn($direction: 'right')
