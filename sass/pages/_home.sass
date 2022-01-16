@@ -1,5 +1,5 @@
 @use '../abstracts/colors'
-
+$transparen-amount: 0.2
 .section-about
     background-color: colors.$light_grey-1
     padding: 25rem 0
@@ -8,3 +8,22 @@
     margin-top: 4rem
     display: grid
     grid-template-columns: repeat( 2,1fr)
+.section-features
+    padding: 8rem 0
+
+    background-image: linear-gradient(to right bottom,transparentize(colors.$light_green,$transparen-amount),transparentize(colors.$dark_green,$transparen-amount)), url(../img/nat-4.jpg)
+    background-size: cover
+    background-position: top
+
+    transform: skewY(-7deg)
+    margin-top: -5rem
+
+    & > *
+        transform: skewY(7deg)
+
+.features
+    @extend .grid-container
+    margin-right: 4rem
+    margin-left: 4rem
+    grid-template-columns: repeat(4, 21%)
+    column-gap: 61px
