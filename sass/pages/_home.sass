@@ -1,5 +1,11 @@
 @use '../abstracts/colors'
 $transparen-amount: 0.2
+%skew
+    transform: skewY(-7deg)
+    margin-top: -5rem
+
+    & > *
+        transform: skewY(7deg)
 .section-about
     background-color: colors.$light_grey-1
     padding: 25rem 0
@@ -15,11 +21,7 @@ $transparen-amount: 0.2
     background-size: cover
     background-position: top
 
-    transform: skewY(-7deg)
-    margin-top: -5rem
-
-    & > *
-        transform: skewY(7deg)
+    @extend %skew
 
 .features
     @extend .grid-container
@@ -27,3 +29,12 @@ $transparen-amount: 0.2
     margin-left: 4rem
     grid-template-columns: repeat(4, 21%)
     column-gap: 61px
+
+.section-tours
+    background-color: colors.$light_grey-1
+    padding: 11rem 0
+    margin-top: -78px
+    .grid-container
+        grid-template-columns: repeat( 3,20%)
+        grid-column-gap: 5%
+        place-content: center

@@ -1,0 +1,49 @@
+@use '../abstracts/colors'
+
+.card
+    -moz-perspective: 100rem
+    perspective: 100rem
+
+    position: relative
+    height: 334.141px
+
+    &__side
+        position: absolute
+        top: 0
+        left: 0
+
+        border-radius: 3px
+        box-shadow: 0 1.5rem 4rem rgba(colors.$dark,.15 )
+
+        text-align: center
+
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+
+        height: 334.141px
+
+        width: 100%
+        transition: all 1s ease
+
+        &--front
+            background-color: colors.$white
+        &--back
+            transform: rotateY(180deg)
+            &-1
+                background-image: linear-gradient(to right bottom,colors.$light-orange,colors.$regular-orange)
+            &-2
+                background-image: linear-gradient(to right bottom,colors.$light_green,colors.$dark_green)
+            &-3
+                background-image: linear-gradient(to right bottom,colors.$light-blue,colors.$regular-blueberry)
+
+    &:hover &__side--front
+        transform: rotateY(180deg)
+
+    &:hover &__side--back
+        transform: rotateY(0deg)
+.card__heading
+    font-size: 1.17em
+
+.card__details
+    ul
+        list-style-type: none
