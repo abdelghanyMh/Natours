@@ -1,11 +1,10 @@
 @use '../abstracts'
-@use '../base'
 $transparen-amount: 0.2
 
 %btn-default-text-style
     text-transform: uppercase
     text-decoration: none
-    font-weight: base.get-fweight('medium')
+    font-weight: abstracts.get-fweight('medium')
 .btn
     &__animated
         @include abstracts.animat_fadeIn($direction: 'up')

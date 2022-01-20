@@ -28,101 +28,6 @@ header {
   height: 35px;
 }
 
-body {
-  font-family: "lato", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary {
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  color: #fff;
-}
-.heading-primary > * {
-  display: block;
-  font-weight: 400;
-}
-.heading-primary__main {
-  font-size: 4.5rem;
-  letter-spacing: 20px;
-  animation: animate__fadeIn__left 0.7s ease-in 0.1s;
-}
-@keyframes animate__fadeIn__left {
-  from {
-    transform: translateX(-20%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-.heading-primary__sub {
-  font-size: 1.5rem;
-  letter-spacing: 13px;
-  animation: animate__fadeIn__right 0.7s ease-in 0.1s;
-}
-@keyframes animate__fadeIn__right {
-  from {
-    transform: translateX(20%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-.heading-secendary {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  display: inline-block;
-  color: transparent;
-  -webkit-background-clip: text;
-  letter-spacing: 2px;
-  transition: all 0.2s;
-}
-.heading-secendary:hover {
-  transform: skewY(2deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0);
-}
-
-.infos {
-  padding: 0px 5rem;
-}
-.infos .heading-tertiary {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.infos .paragraph:not(:last-child) {
-  margin-bottom: 3rem;
-}
-
-.u-center-text {
-  text-align: center;
-}
-
-.u-margin-bottom-small {
-  margin-bottom: 1.5rem;
-}
-
-.u-margin-bottom-big {
-  margin-bottom: 8rem;
-}
-
 .btn-text, .btn:visited, .btn:link {
   text-transform: uppercase;
   text-decoration: none;
@@ -285,7 +190,7 @@ body {
   -moz-perspective: 100rem;
   perspective: 100rem;
   position: relative;
-  height: 334.141px;
+  height: 70vh;
 }
 .card__side {
   position: absolute;
@@ -296,9 +201,10 @@ body {
   text-align: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  height: 334.141px;
+  height: 70vh;
   width: 100%;
   transition: all 1s ease;
+  overflow: hidden;
 }
 .card__side--front {
   background-color: #fff;
@@ -316,14 +222,50 @@ body {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
 }
 .card:hover .card__side--front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .card:hover .card__side--back {
   transform: rotateY(0deg);
 }
-
+.card__picture {
+  height: 50%;
+  background-blend-mode: screen;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+}
+.card__picture--2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+}
+.card__picture--3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
 .card__heading {
-  font-size: 1.17em;
+  font-size: 1.7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: right;
+  position: absolute;
+  top: 6rem;
+  right: 1rem;
+  width: 65%;
+}
+.card__heading-span {
+  padding: 1rem 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
 }
 
 .card__details ul {
@@ -340,7 +282,7 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 12rem 0;
   margin-top: -20vh;
 }
 
@@ -370,9 +312,105 @@ body {
   margin-top: -78px;
 }
 .section-tours .grid-container, .section-tours .features {
-  grid-template-columns: repeat(3, 20%);
+  grid-template-columns: repeat(3, 25%);
+  grid-template-rows: 70vh;
   grid-column-gap: 5%;
   place-content: center;
+}
+
+body {
+  font-family: "lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.heading-primary > * {
+  display: block;
+  font-weight: 400;
+}
+.heading-primary__main {
+  font-size: 4.5rem;
+  letter-spacing: 20px;
+  animation: animate__fadeIn__left 0.7s ease-in 0.1s;
+}
+@keyframes animate__fadeIn__left {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.heading-primary__sub {
+  font-size: 1.5rem;
+  letter-spacing: 13px;
+  animation: animate__fadeIn__right 0.7s ease-in 0.1s;
+}
+@keyframes animate__fadeIn__right {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.heading-secendary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  color: transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.heading-secendary:hover {
+  transform: skewY(2deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0);
+}
+
+.infos {
+  padding: 0px 5rem;
+}
+.infos .heading-tertiary {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.infos .paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
 }
 
 /*# sourceMappingURL=style.css.map */

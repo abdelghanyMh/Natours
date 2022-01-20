@@ -1,13 +1,9 @@
 @use '../abstracts'
 $default-font-size: 1.6rem
-$font-weights: ("regular": 400, "medium": 500, "bold": 700)
-
-@function get-fweight($weight)
-    @return map-get($font-weights,$weight)
 
 body
     font-family: "lato",sans-serif
-    font-weight: get-fweight('regular')
+    font-weight: abstracts.get-fweight('regular')
     font-size: 1rem
     line-height: 1.7
 .text-box
@@ -24,7 +20,7 @@ body
     color: abstracts.$white
     & > *
         display: block
-        font-weight: get-fweight('regular')
+        font-weight: abstracts.get-fweight('regular')
     &__main
         font-size: 4.5rem
         letter-spacing: 20px
@@ -38,7 +34,7 @@ body
 .heading-secendary
     font-size: 2rem
     text-transform: uppercase
-    font-weight: get-fweight('bold')
+    font-weight: abstracts.get-fweight('bold')
 
     background-image: linear-gradient(to right,abstracts.$light_green,abstracts.$dark_green)
     display: inline-block
@@ -55,7 +51,7 @@ body
     padding: 0px 5rem
     .heading-tertiary
         font-size: 1.2rem
-        font-weight: get-fweight('bold')
+        font-weight: abstracts.get-fweight('bold')
         text-transform: uppercase
     .paragraph:not(:last-child)
         margin-bottom: 3rem

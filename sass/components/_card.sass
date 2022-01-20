@@ -1,11 +1,12 @@
-@use '../abstracts/colors'
+@use '../abstracts'
 
 .card
+    //functionalie
     -moz-perspective: 100rem
     perspective: 100rem
 
     position: relative
-    height: 334.141px
+    height: 70vh
 
     &__side
         position: absolute
@@ -13,37 +14,70 @@
         left: 0
 
         border-radius: 3px
-        box-shadow: 0 1.5rem 4rem rgba(colors.$dark,.15 )
+        box-shadow: 0 1.5rem 4rem rgba(abstracts.$dark,.15 )
 
         text-align: center
 
         -webkit-backface-visibility: hidden
         backface-visibility: hidden
 
-        height: 334.141px
+        height: 70vh
 
         width: 100%
         transition: all 1s ease
+        overflow: hidden // for the background image
 
         &--front
-            background-color: colors.$white
+            background-color: abstracts.$white
         &--back
             transform: rotateY(180deg)
             &-1
-                background-image: linear-gradient(to right bottom,colors.$light-orange,colors.$regular-orange)
+                background-image: linear-gradient(to right bottom,abstracts.$light-orange,abstracts.$regular-orange)
             &-2
-                background-image: linear-gradient(to right bottom,colors.$light_green,colors.$dark_green)
+                background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green)
             &-3
-                background-image: linear-gradient(to right bottom,colors.$light-blue,colors.$regular-blueberry)
+                background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry)
 
     &:hover &__side--front
-        transform: rotateY(180deg)
+        transform: rotateY(-180deg)
 
     &:hover &__side--back
         transform: rotateY(0deg)
-.card__heading
-    font-size: 1.17em
+    &__picture
+        height: 50%
+        background-blend-mode: screen
+        background-size: cover
+        clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%)
 
+        &--1
+            background-image: linear-gradient(to right bottom,abstracts.$light-orange,abstracts.$regular-orange), url(../img/nat-5.jpg)
+        &--2
+            background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green),url(../img/nat-6.jpg)
+        &--3
+            background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry),url(../img/nat-7.jpg)
+    &__heading
+        font-size: 1.7rem
+        font-weight: 300
+        text-transform: uppercase
+        color: abstracts.$white
+        text-align: right
+
+        position: absolute
+
+        top: 6rem
+        right: 1rem
+        width: 65%
+    &__heading-span
+        padding: 1rem 3px
+        box-decoration-break: clone
+        -webkit-box-decoration-break: clone
+
+        &--1
+            background-image: linear-gradient(to right bottom, rgba(abstracts.$light-orange,.85 ),rgba(abstracts.$regular-orange,.85 ))
+        &--2
+            background-image: linear-gradient(to right bottom, rgba(abstracts.$light_green,.85 ),rgba(abstracts.$dark_green,.85 ))
+        &--3
+            background-image: linear-gradient(to right bottom, rgba(abstracts.$light-blue,.85 ),rgba(abstracts.$regular-blueberry,.85 ))
 .card__details
     ul
         list-style-type: none
