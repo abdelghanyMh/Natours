@@ -410,6 +410,10 @@ header {
   background-color: #f7f7f7;
   position: relative;
 }
+.section-book {
+  padding: 12rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
 
 /* about grid style*/
 .grid-container, .features {
@@ -424,6 +428,21 @@ header {
   margin-left: 4rem;
   grid-template-columns: repeat(4, 21%);
   column-gap: 61px;
+}
+
+/*book section style*/
+.book {
+  width: 86%;
+  margin: 0 auto;
+  background-image: linear-gradient(105deg, #fff 0%, #fff 50%, transparent 50%), url("../img/nat-10.jpg");
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.15rem 4rem rgba(0, 0, 0, 0.15);
+  height: 24rem;
+}
+.book__form {
+  padding: 3rem;
+  width: 50%;
 }
 
 body {
@@ -515,6 +534,10 @@ body {
 
 .u-margin-bottom-small {
   margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
 }
 
 .u-margin-bottom-big {
