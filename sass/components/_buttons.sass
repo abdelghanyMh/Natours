@@ -47,11 +47,11 @@ $transparen-amount: 0.2
 
         transition: all .4s
 
-.btn-white
-    color: abstracts.$dark_grey
-    background-color: abstracts.$white
-    &::after
+    &--white
+        color: abstracts.$dark_grey
         background-color: abstracts.$white
+        &::after
+            background-color: abstracts.$white
 
 .btn-text
     @extend %btn-default-text-style

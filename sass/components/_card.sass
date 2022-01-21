@@ -1,7 +1,7 @@
 @use '../abstracts'
 
 .card
-    //functionalie
+    //functionality
     -moz-perspective: 100rem
     perspective: 100rem
 
@@ -43,6 +43,7 @@
 
     &:hover &__side--back
         transform: rotateY(0deg)
+    //FRONT SIDE STYLE
     &__picture
         height: 40%
         background-blend-mode: screen
@@ -91,3 +92,16 @@
                 padding: .5rem
                 &:not(:last-child)
                     border-bottom: 1px solid abstracts.$light_grey-2
+    //BACK SIDE  STYLE
+    &__cta
+        height: 67vh
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        color: abstracts.$white
+    &__price
+        &-value
+            font-size: 3rem
+            font-weight: abstracts.get-fweight('medium')

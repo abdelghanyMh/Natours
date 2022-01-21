@@ -80,12 +80,11 @@ header {
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn-white {
+.btn--white {
   color: #777;
   background-color: #fff;
 }
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -282,6 +281,18 @@ header {
 }
 .card__details ul li:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+.card__cta {
+  height: 67vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+}
+.card__price-value {
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .section-features {
