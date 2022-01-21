@@ -305,7 +305,7 @@ header {
 .story {
   width: 75%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   padding: 3rem;
@@ -360,6 +360,21 @@ header {
   opacity: 1;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.15;
+}
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .section-features {
   transform: skewY(-7deg);
   margin-top: -5rem;
@@ -393,6 +408,7 @@ header {
 .section-stories {
   padding: 5rem 0;
   background-color: #f7f7f7;
+  position: relative;
 }
 
 /* about grid style*/
