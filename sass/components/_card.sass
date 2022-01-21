@@ -6,7 +6,7 @@
     perspective: 100rem
 
     position: relative
-    height: 70vh
+    height: abstracts.$tour-rows-height
 
     &__side
         position: absolute
@@ -21,7 +21,7 @@
         -webkit-backface-visibility: hidden
         backface-visibility: hidden
 
-        height: 70vh
+        height: abstracts.$tour-rows-height
 
         width: 100%
         transition: all 1s ease
@@ -44,7 +44,7 @@
     &:hover &__side--back
         transform: rotateY(0deg)
     &__picture
-        height: 50%
+        height: 40%
         background-blend-mode: screen
         background-size: cover
         clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%)
@@ -63,12 +63,12 @@
         text-align: right
 
         position: absolute
-
-        top: 6rem
+        top: 3.9rem
         right: 1rem
+
         width: 65%
     &__heading-span
-        padding: 1rem 3px
+        padding: .5rem 3px
         box-decoration-break: clone
         -webkit-box-decoration-break: clone
 
@@ -78,6 +78,16 @@
             background-image: linear-gradient(to right bottom, rgba(abstracts.$light_green,.85 ),rgba(abstracts.$dark_green,.85 ))
         &--3
             background-image: linear-gradient(to right bottom, rgba(abstracts.$light-blue,.85 ),rgba(abstracts.$regular-blueberry,.85 ))
-.card__details
-    ul
-        list-style-type: none
+    &__details
+        padding: 1rem
+        ul
+            list-style: none
+            width: 80%
+            margin: 0 auto
+
+            li
+                text-align: center
+                font-size: 1rem
+                padding: .5rem
+                &:not(:last-child)
+                    border-bottom: 1px solid abstracts.$light_grey-2

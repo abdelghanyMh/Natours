@@ -1,4 +1,4 @@
-@use '../abstracts/colors'
+@use '../abstracts'
 $transparen-amount: 0.2
 %skew
     transform: skewY(-7deg)
@@ -7,7 +7,7 @@ $transparen-amount: 0.2
     & > *
         transform: skewY(7deg)
 .section-about
-    background-color: colors.$light_grey-1
+    background-color: abstracts.$light_grey-1
     padding: 12rem 0
     margin-top: -20vh
 .grid-container
@@ -17,7 +17,7 @@ $transparen-amount: 0.2
 .section-features
     padding: 8rem 0
 
-    background-image: linear-gradient(to right bottom,transparentize(colors.$light_green,$transparen-amount),transparentize(colors.$dark_green,$transparen-amount)), url(../img/nat-4.jpg)
+    background-image: linear-gradient(to right bottom,transparentize(abstracts.$light_green,$transparen-amount),transparentize(abstracts.$dark_green,$transparen-amount)), url(../img/nat-4.jpg)
     background-size: cover
     background-position: top
 
@@ -31,11 +31,11 @@ $transparen-amount: 0.2
     column-gap: 61px
 
 .section-tours
-    background-color: colors.$light_grey-1
+    background-color: abstracts.$light_grey-1
     padding: 11rem 0
     margin-top: -78px
     .grid-container
         grid-template-columns: repeat( 3,25%)
-        grid-template-rows: 70vh
+        grid-template-rows: abstracts.$tour-rows-height
         grid-column-gap: 5%
         place-content: center

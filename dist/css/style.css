@@ -190,7 +190,7 @@ header {
   -moz-perspective: 100rem;
   perspective: 100rem;
   position: relative;
-  height: 70vh;
+  height: 67vh;
 }
 .card__side {
   position: absolute;
@@ -201,7 +201,7 @@ header {
   text-align: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  height: 70vh;
+  height: 67vh;
   width: 100%;
   transition: all 1s ease;
   overflow: hidden;
@@ -228,7 +228,7 @@ header {
   transform: rotateY(0deg);
 }
 .card__picture {
-  height: 50%;
+  height: 40%;
   background-blend-mode: screen;
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -249,12 +249,12 @@ header {
   color: #fff;
   text-align: right;
   position: absolute;
-  top: 6rem;
+  top: 3.9rem;
   right: 1rem;
   width: 65%;
 }
 .card__heading-span {
-  padding: 1rem 3px;
+  padding: 0.5rem 3px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -267,9 +267,21 @@ header {
 .card__heading-span--3 {
   background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
 }
-
+.card__details {
+  padding: 1rem;
+}
 .card__details ul {
-  list-style-type: none;
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 .section-features {
@@ -313,7 +325,7 @@ header {
 }
 .section-tours .grid-container, .section-tours .features {
   grid-template-columns: repeat(3, 25%);
-  grid-template-rows: 70vh;
+  grid-template-rows: 67vh;
   grid-column-gap: 5%;
   place-content: center;
 }

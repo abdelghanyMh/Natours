@@ -1,4 +1,10 @@
 @use '../abstracts/colors'
+$tour-rows-height: 67vh
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700)
+
+@function get-fweight($weight)
+    @return map-get($font-weights,$weight)
 
 *
     box-sizing: border-box
@@ -7,8 +13,3 @@
 body
     padding: 30px
     color: colors.$dark_grey
-
-$font-weights: ("regular": 400, "medium": 500, "bold": 700)
-
-@function get-fweight($weight)
-    @return map-get($font-weights,$weight)
