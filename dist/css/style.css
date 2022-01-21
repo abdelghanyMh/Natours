@@ -328,9 +328,36 @@ header {
   clip-path: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   transform: translateX(-1.5rem) skewX(12deg);
+  position: relative;
 }
 .story__img {
   height: 100%;
+  transform: scale(1.4);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 0.5s;
+}
+.story__caption {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 0.5s;
+}
+.story:hover .story__img {
+  transform: scale(1) translateX(-2rem);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+.story:hover .story__caption {
+  top: 50%;
+  opacity: 1;
 }
 
 .section-features {
