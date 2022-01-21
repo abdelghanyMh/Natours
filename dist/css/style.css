@@ -87,6 +87,13 @@ header {
 .btn--white::after {
   background-color: #fff;
 }
+.btn--green {
+  color: #fff;
+  background-color: #55c57a;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
 
 .btn-text {
   display: inline-block;
@@ -331,7 +338,7 @@ header {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 11rem 0;
+  padding: 11rem 0 6rem 0;
   margin-top: -78px;
 }
 .section-tours .grid-container, .section-tours .features {
@@ -434,6 +441,10 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
 }
 
 /*# sourceMappingURL=style.css.map */
