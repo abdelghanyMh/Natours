@@ -302,6 +302,37 @@ header {
   font-weight: 500;
 }
 
+.story {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 3rem;
+  padding-left: 4.5rem;
+  font-size: 1rem;
+  transform: skewX(-12deg);
+}
+.story:not(:last-child) {
+  margin-bottom: 6rem;
+}
+.story > * {
+  transform: skewX(12deg);
+}
+.story__shape {
+  width: 9rem;
+  height: 9rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  transform: translateX(-1.5rem) skewX(12deg);
+}
+.story__img {
+  height: 100%;
+}
+
 .section-features {
   transform: skewY(-7deg);
   margin-top: -5rem;
@@ -315,27 +346,12 @@ header {
   padding: 12rem 0;
   margin-top: -20vh;
 }
-
-.grid-container, .features {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .section-features {
   padding: 8rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   background-position: top;
 }
-
-.features {
-  margin-right: 4rem;
-  margin-left: 4rem;
-  grid-template-columns: repeat(4, 21%);
-  column-gap: 61px;
-}
-
 .section-tours {
   background-color: #f7f7f7;
   padding: 11rem 0 6rem 0;
@@ -346,6 +362,25 @@ header {
   grid-template-rows: 67vh;
   grid-column-gap: 5%;
   place-content: center;
+}
+.section-stories {
+  padding: 5rem 0;
+  background-color: #f7f7f7;
+}
+
+/* about grid style*/
+.grid-container, .features {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*features grid style*/
+.features {
+  margin-right: 4rem;
+  margin-left: 4rem;
+  grid-template-columns: repeat(4, 21%);
+  column-gap: 61px;
 }
 
 body {
@@ -403,7 +438,7 @@ body {
   }
 }
 
-.heading-secendary {
+.heading-secondary {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -414,7 +449,7 @@ body {
   letter-spacing: 2px;
   transition: all 0.2s;
 }
-.heading-secendary:hover {
+.heading-secondary:hover {
   transform: skewY(2deg) scale(1.1);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0);
 }
