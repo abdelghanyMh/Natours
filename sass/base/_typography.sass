@@ -32,6 +32,8 @@ body
         @include abstracts.animat_fadeIn($direction: 'right')
 
 .heading-secondary
+    z-index: 999
+    position: inherit
     font-size: 2rem
     text-transform: uppercase
     font-weight: abstracts.get-fweight('bold')
@@ -45,7 +47,7 @@ body
     transition: all .2s
     &:hover
         transform: skewY(2deg) scale(1.1)
-        text-shadow: .5rem 1rem 2rem transparentize(abstracts.$dark,.6 )
+        text-shadow: 0 0.7rem 2rem rgb(0 0 0 / 50%)
 
 .infos
     padding: 0px 5rem
