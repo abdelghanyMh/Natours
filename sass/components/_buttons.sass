@@ -10,7 +10,7 @@ $transparen-amount: 0.2
         @include abstracts.animat_fadeIn($direction: 'up')
         animation-fill-mode: backwards
 
-    &:visited,&:link
+    &,&:visited,&:link
         @extend %btn-default-text-style
 
         border-radius: 35px
@@ -104,3 +104,4 @@ $transparen-amount: 0.2
     &:active
         transform: translateY(-1px)
         box-shadow: 0 5px 10px transparentize(#000,0.7)
+
