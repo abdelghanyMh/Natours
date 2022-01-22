@@ -1,0 +1,62 @@
+@use '../abstracts/colors'
+%link_default_style
+    color: colors.$light_grey-1
+    text-decoration: none
+    text-transform: uppercase
+    display: inline-block
+    transition: all .4s
+.footer
+    color: colors.$light_grey-1
+
+    background-color: colors.$dark_grey_3
+    padding: 5rem 2rem
+    display: -ms-grid
+    display: grid
+    grid-gap: 4rem
+    grid-template-areas: 'logo logo' ' navigation copyright'
+    grid-template-columns: repeat(2,.5fr)
+
+    &__logo-box
+        grid-area: logo
+        text-align: center
+    &__logo
+        width: 8rem
+        height: auto
+    &__navigation,&__copyright
+        position: relative
+
+        &::before
+            content: ''
+            position: absolute
+            height: 2px
+            width: 100%
+            background-color: colors.$light_grey-1
+
+    &__navigation
+        grid-area: navigation
+    &__list,&__copyright-text
+        padding-top: 2rem
+        font-size: 0.9rem
+    &__list
+        list-style: none
+    &__item
+        display: inline-block
+        &:not(:last-child)
+            margin-right: .8rem
+    &__link
+        &:visited,&:link
+            @extend %link_default_style
+        &:hover
+            color: colors.$dark_green
+            transform: skewY(6deg) scale(1.2)
+            box-shadow: 0 4px 8px 4px colors.$dark
+
+    &__copyright
+        grid-area: copyright
+        &-link
+            @extend %link_default_style
+            text-transform: capitalize
+            color: colors.$light-yellow
+            &:hover
+                color: colors.$dark_green
+                text-decoration: underline

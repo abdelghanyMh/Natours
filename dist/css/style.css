@@ -28,6 +28,75 @@ header {
   height: 35px;
 }
 
+.footer__copyright-link, .footer__link:visited, .footer__link:link {
+  color: #f7f7f7;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.4s;
+}
+
+.footer {
+  color: #f7f7f7;
+  background-color: #333;
+  padding: 5rem 2rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-areas: "logo logo" " navigation copyright";
+  grid-template-columns: repeat(2, 0.5fr);
+}
+.footer__logo-box {
+  grid-area: logo;
+  text-align: center;
+}
+.footer__logo {
+  width: 8rem;
+  height: auto;
+}
+.footer__navigation, .footer__copyright {
+  position: relative;
+}
+.footer__navigation::before, .footer__copyright::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+.footer__navigation {
+  grid-area: navigation;
+}
+.footer__list, .footer__copyright-text {
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+.footer__list {
+  list-style: none;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 0.8rem;
+}
+.footer__link:hover {
+  color: #28b485;
+  transform: skewY(6deg) scale(1.2);
+  box-shadow: 0 4px 8px 4px #00000050;
+}
+.footer__copyright {
+  grid-area: copyright;
+}
+.footer__copyright-link {
+  text-transform: capitalize;
+  color: #f0cc8f;
+}
+.footer__copyright-link:hover {
+  color: #28b485;
+  text-decoration: underline;
+}
+
 .btn-text, .btn, .btn:visited, .btn:link {
   text-transform: uppercase;
   text-decoration: none;
