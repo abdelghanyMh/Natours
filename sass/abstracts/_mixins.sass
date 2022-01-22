@@ -28,3 +28,12 @@
         to
             transform: translate#{$axis}(0%)
             opacity: 1
+
+// place holder color
+@mixin placeholder($selector, $color)
+    #{$selector}::-webkit-input-placeholder
+        color: $color
+    #{$selector}::-moz-placeholder
+        color: $color
+    #{$selector}:-ms-input-placeholder
+        color: $color
