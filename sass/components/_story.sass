@@ -37,13 +37,11 @@
         transition: all .5s
 
     &__caption
-        position: absolute
+        @include abstracts.absCenter()
         top: 100%
-        left: 50%
 
         opacity: 0
 
-        transform: translate(-50%,-50%)
 
         font-size: 1.2rem
         text-align: center

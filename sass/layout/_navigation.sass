@@ -47,10 +47,7 @@
         z-index: 1500
 
     &__list
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
+        @include abstracts.absCenter()
 
         list-style: none
         text-align: center
