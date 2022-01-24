@@ -1,26 +1,35 @@
 @use '../abstracts'
+%hamburger_common_style
+    position: absolute
+    top: 2rem
+
+    width: 28px
+    height: 3px
+    background: abstracts.$dark
+    transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27)
 
 .navigation
     &__checkbox
         display: none
-    &__button
-        height: 5rem
-        width: 5rem
 
+    &__button
+        height: 4rem
+        width: 4rem
         position: fixed
-        top: 2.7rem
-        right: 2.7rem
+        top: 3rem
+        right: 1.9rem
         border-radius: 50%
         background-color: abstracts.$white
         z-index: 2000
         box-shadow: 0 0.9rem 1rem rgb(0 0 0 / 11%)
+
     &__background
-        height: 4rem
-        width: 4rem
+        height: 2rem
+        width: 2rem
 
         position: fixed
-        top: 3rem
-        right: 3rem
+        top: 3.1rem
+        right: 2.5rem
         border-radius: 50%
         background-image: radial-gradient(abstracts.$light_green,abstracts.$dark_green)
         z-index: 1000
@@ -52,6 +61,7 @@
         transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27)
 
         margin: 1rem
+
     &__link
         &:link,&:visited
             display: inline-block
@@ -77,14 +87,41 @@
             transform: translateX(.5rem)
 
         // this way we used checkbox
+
     &__checkbox:checked ~ &__background
-        transform: scale(80)
+        transform: scale(1000)
 
     &__checkbox:checked ~ &__nav
         width: 100%
         opacity: 1
         .navigation__item
             transform: translateX(0)
+    &__icon
+        @extend %hamburger_common_style
+        left: 1.2rem
+        transition: all .5s ease-in-out
+
+        &::before,&::after
+            @extend %hamburger_common_style
+            content: ''
+        &::before
+            top: -8px
+        &::after
+            top: 8px
+            left: 0px
+            width: 20px
+            text-align: left
+    &__checkbox:checked ~ &__button
+        .navigation__icon
+            transform: rotate(720deg)
+            background-color: transparent
+            &::before,&::after
+                top: 0
+            &::before
+                transform: rotate(-45deg)
+            &::after
+                transform: rotate(45deg)
+                width: 28px
 
 // adding transition-delay to make suquential slide-in animation
 @for $i from 1 through 5
