@@ -1,3 +1,26 @@
+@use '../abstracts'
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
 html
     // This defines what 1rem is
     font-size: 62.5% //1 rem = 10px; 10px/16px = 62.5%
+
+    @include abstracts.respond(tab-land)  // width < 1200?
+        font-size: 56.25% //1 rem = 9px, 9/16 = 50%
+
+    @include abstracts.respond(tab-port)  // width < 900?
+        font-size: 50% //1 rem = 8px, 8/16 = 50%
+
+    @include abstracts.respond(big-desktop)
+        font-size: 75% //1rem = 12, 12/16
+
+body
+    padding: 30px
+    color: abstracts.$dark_grey
+
+    @include abstracts.respond(tab-port)
+        padding: 0
