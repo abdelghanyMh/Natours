@@ -2,18 +2,20 @@
 $transparen-amount: 0.2
 %skew
     transform: skewY(-7deg)
-    margin-top: -5rem
+    margin-top: -9rem
 
     & > *
         transform: skewY(7deg)
 .section
     &-about
         background-color: abstracts.$light_grey-1
-        padding: 12rem 0
+        padding: 25rem 0
         margin-top: -20vh
+        .about-info__images
+            padding: 0 5rem
 
     &-features
-        padding: 8rem 0
+        padding: 20rem 0
 
         background-image: linear-gradient(to right bottom,transparentize(abstracts.$light_green,$transparen-amount),transparentize(abstracts.$dark_green,$transparen-amount)), url(../img/nat-4.jpg)
         background-size: cover
@@ -23,7 +25,7 @@ $transparen-amount: 0.2
 
     &-tours
         background-color: abstracts.$light_grey-1
-        padding: 11rem 0 6rem 0
+        padding: 25rem 0 15rem 0
 
         margin-top: -78px
         .grid-container
@@ -66,5 +68,5 @@ $transparen-amount: 0.2
     box-shadow: 0 1.15rem 4rem rgba(abstracts.$dark ,.15 )
 
     &__form
-        padding: 3rem
+        padding: 5rem
         width: 50%

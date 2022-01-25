@@ -1,11 +1,9 @@
 @use '../abstracts'
-%hamburger_common_style
-    position: absolute
-    top: 2rem
 
+%hamburger_common_style
     width: 28px
     height: 3px
-    background: abstracts.$dark
+    background: abstracts.$dark_grey_3
     transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27)
 
 .navigation
@@ -13,23 +11,26 @@
         display: none
 
     &__button
-        height: 4rem
-        width: 4rem
         position: fixed
-        top: 3rem
-        right: 1.9rem
+        top: 5rem
+        right: 4rem
+
+        height: 7rem
+        width: 7rem
+
         border-radius: 50%
         background-color: abstracts.$white
         z-index: 2000
         box-shadow: 0 0.9rem 1rem rgb(0 0 0 / 11%)
 
     &__background
+        position: fixed
+        top: 7.5rem
+        right: 7.5rem
+
         height: 2rem
         width: 2rem
 
-        position: fixed
-        top: 3.1rem
-        right: 2.5rem
         border-radius: 50%
         background-image: radial-gradient(abstracts.$light_green,abstracts.$dark_green)
         z-index: 1000
@@ -62,9 +63,9 @@
     &__link
         &:link,&:visited
             display: inline-block
-            padding: .6rem 2rem
+            padding: 1rem 2rem
 
-            font-size: 1.5rem
+            font-size: 3rem
             font-weight: 300
             color: abstracts.$white
             text-decoration: none
@@ -93,32 +94,36 @@
         opacity: 1
         .navigation__item
             transform: translateX(0)
+
     &__icon
+        @include abstracts.absCenter()
         @extend %hamburger_common_style
-        left: 1.2rem
         transition: all .5s ease-in-out
 
         &::before,&::after
-            @extend %hamburger_common_style
             content: ''
+            position: absolute
+            @extend %hamburger_common_style
         &::before
             top: -8px
         &::after
-            top: 8px
-            left: 0px
+            top: 10px
+            left: 0
             width: 20px
-            text-align: left
+
     &__checkbox:checked ~ &__button
         .navigation__icon
-            transform: rotate(720deg)
+            transform: translate(-50%, -50%) rotate(720deg)
             background-color: transparent
-            &::before,&::after
-                top: 0
             &::before
                 transform: rotate(-45deg)
+                top: 0
+
             &::after
                 transform: rotate(45deg)
                 width: 28px
+                top: 0
+                left: 0
 
 // adding transition-delay to make suquential slide-in animation
 @for $i from 1 through 5

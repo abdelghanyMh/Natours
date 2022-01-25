@@ -1,5 +1,5 @@
 @use '../abstracts'
-
+$default-fsize: 1.6rem
 %label_inital_style
     opacity: 0
     visibility: hidden
@@ -14,16 +14,16 @@
         &:not(:last-child)
             margin-bottom: 1.5rem
     &__label
-        font-size: 1.1rem
+        font-size: $default-fsize
         margin-left: 2rem
         margin-top: 0.7rem
         display: block
         transition: all 0.3s
-        transform: translate(-8.5px,-7rem)
-        -webkit-transform: translate(-8.5px,-7rem)
+        transform: translate(-5px,-8rem)
+        -webkit-transform: translate(-5px,-8rem)
 
     &__input
-        font-size: 1rem
+        font-size: $default-fsize
         font-family: inherit
         color: inherit
 
@@ -47,10 +47,13 @@
         &:placeholder-shown + .form__label
             opacity: 0
             visibility: hidden
-            -webkit-transform: translate(-8.5px,-3.3em)
-            transform: translate(-8.5px,-3.3em)
+            -webkit-transform: translate(-5px, -4.3rem)
+            transform: translate(-5px, -4.3rem)
 
     &__radio
+        &-label
+            font-size: $default-fsize
+
         &-group
             display: flex
             flex-direction: row

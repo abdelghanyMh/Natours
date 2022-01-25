@@ -1,4 +1,6 @@
 @use '../abstracts/colors'
+$default-fsize: 1.6rem
+
 %link_default_style
     color: colors.$light_grey-1
     text-decoration: none
@@ -36,7 +38,7 @@
         grid-area: navigation
     &__list,&__copyright-text
         padding-top: 2rem
-        font-size: 0.9rem
+        font-size: $default-fsize
     &__list
         list-style: none
     &__item
@@ -53,6 +55,8 @@
 
     &__copyright
         grid-area: copyright
+        font-size: $default-fsize
+
         &-link
             @extend %link_default_style
             text-transform: capitalize

@@ -4,13 +4,10 @@ $default-font-size: 1.6rem
 body
     font-family: "lato",sans-serif
     font-weight: abstracts.get-fweight('regular')
-    font-size: 1rem
     line-height: 1.7
 .text-box
-    position: absolute
+    @include abstracts.absCenter
     top: 40%
-    left: 50%
-    transform: translate(-50%,-50%)
     text-align: center
 
 .heading-primary
@@ -22,19 +19,19 @@ body
         display: block
         font-weight: abstracts.get-fweight('regular')
     &__main
-        font-size: 4.5rem
+        font-size: 6rem
         letter-spacing: 20px
         @include abstracts.animat_fadeIn($direction: 'left')
 
     &__sub
-        font-size: 1.5rem
+        font-size: 2rem
         letter-spacing: 13px
         @include abstracts.animat_fadeIn($direction: 'right')
 
 .heading-secondary
     z-index: 999
     position: inherit
-    font-size: 2rem
+    font-size: 3.5rem
     text-transform: uppercase
     font-weight: abstracts.get-fweight('bold')
 
@@ -49,11 +46,13 @@ body
         transform: skewY(2deg) scale(1.1)
         text-shadow: 0 0.7rem 2rem rgb(0 0 0 / 50%)
 
-.infos
-    padding: 0px 5rem
+.about-info__infos
+    padding: 0px 8rem
     .heading-tertiary
-        font-size: 1.2rem
+        font-size: 1.6rem
         font-weight: abstracts.get-fweight('bold')
         text-transform: uppercase
-    .paragraph:not(:last-child)
-        margin-bottom: 3rem
+    .paragraph
+        font-size: 1.6rem
+        &:not(:last-child)
+            margin-bottom: 3rem

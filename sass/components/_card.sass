@@ -57,7 +57,7 @@
         &--3
             background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry),url(../img/nat-7.jpg)
     &__heading
-        font-size: 1.7rem
+        font-size: 2.8rem
         font-weight: 300
         text-transform: uppercase
         color: abstracts.$white
@@ -67,9 +67,9 @@
         top: 3.9rem
         right: 1rem
 
-        width: 65%
+        width: 67%
     &__heading-span
-        padding: .5rem 3px
+        padding: 1rem 1.5rem
         box-decoration-break: clone
         -webkit-box-decoration-break: clone
 
@@ -88,8 +88,8 @@
 
             li
                 text-align: center
-                font-size: 1rem
-                padding: .5rem
+                font-size: 1.5rem
+                padding: 1rem
                 &:not(:last-child)
                     border-bottom: 1px solid abstracts.$light_grey-2
     //BACK SIDE  STYLE
@@ -99,9 +99,12 @@
         display: flex
         flex-direction: column
         align-items: center
-        justify-content: space-around
+        justify-content: space-evenly
         color: abstracts.$white
     &__price
+        &-only
+            font-size: 1.5rem
+
         &-value
-            font-size: 3rem
+            font-size: 6rem
             font-weight: abstracts.get-fweight('medium')
