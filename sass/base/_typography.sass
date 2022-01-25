@@ -22,11 +22,16 @@ body
         font-size: 6rem
         letter-spacing: 20px
         @include abstracts.animat_fadeIn($direction: 'left')
+        @include abstracts.respond(phone)
+            font-size: 5rem
+            letter-spacing: 1rem
 
     &__sub
         font-size: 2rem
         letter-spacing: 13px
         @include abstracts.animat_fadeIn($direction: 'right')
+        @include abstracts.respond(phone)
+            letter-spacing: .5rem
 
 .heading-secondary
     z-index: 999
@@ -42,6 +47,11 @@ body
 
     letter-spacing: 2px
     transition: all .2s
+    @include abstracts.respond(tab-port)
+        font-size: 3rem
+
+    @include abstracts.respond(phone)
+        font-size: 2.5rem
     &:hover
         transform: skewY(2deg) scale(1.1)
         text-shadow: 0 0.7rem 2rem rgb(0 0 0 / 50%)
@@ -49,10 +59,14 @@ body
 .about-info__infos
     padding: 0px 8rem
     .heading-tertiary
-        font-size: 1.6rem
+        font-size: $default-font-size
         font-weight: abstracts.get-fweight('bold')
         text-transform: uppercase
+        @include abstracts.respond(phone)
+            font-size: 2rem
     .paragraph
-        font-size: 1.6rem
+        font-size: $default-font-size
+        @include abstracts.respond(phone)
+            font-size: 1.9rem
         &:not(:last-child)
             margin-bottom: 3rem
