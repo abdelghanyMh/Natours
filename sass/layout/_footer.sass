@@ -1,16 +1,16 @@
-@use '../abstracts/colors'
+@use '../abstracts'
 $default-fsize: 1.6rem
 
 %link_default_style
-    color: colors.$light_grey-1
+    color: abstracts.$light_grey-1
     text-decoration: none
     text-transform: uppercase
     display: inline-block
     transition: all .4s
 .footer
-    color: colors.$light_grey-1
+    color: abstracts.$light_grey-1
 
-    background-color: colors.$dark_grey_3
+    background-color: abstracts.$dark_grey_3
     padding: 5rem 2rem
     display: -ms-grid
     display: grid
@@ -18,11 +18,17 @@ $default-fsize: 1.6rem
     grid-template-areas: 'logo logo' ' navigation copyright'
     grid-template-columns: repeat(2,.5fr)
 
+    @include abstracts.respond(phone)
+        grid-gap: 0
+        row-gap: 5rem
+        grid-template-columns: 100%
+        grid-template-areas: 'logo logo' ' navigation navigation' 'copyright copyright'
+        
     &__logo-box
         grid-area: logo
         text-align: center
     &__logo
-        width: 8rem
+        width: 16rem
         height: auto
     &__navigation,&__copyright
         position: relative
@@ -32,7 +38,7 @@ $default-fsize: 1.6rem
             position: absolute
             height: 2px
             width: 100%
-            background-color: colors.$light_grey-1
+            background-color: abstracts.$light_grey-1
 
     &__navigation
         grid-area: navigation
@@ -49,9 +55,9 @@ $default-fsize: 1.6rem
         &:visited,&:link
             @extend %link_default_style
         &:hover
-            color: colors.$dark_green
+            color: abstracts.$dark_green
             transform: skewY(6deg) scale(1.2)
-            box-shadow: 0 4px 8px 4px colors.$dark
+            box-shadow: 0 4px 8px 4px abstracts.$dark
 
     &__copyright
         grid-area: copyright
@@ -60,7 +66,7 @@ $default-fsize: 1.6rem
         &-link
             @extend %link_default_style
             text-transform: capitalize
-            color: colors.$light-yellow
+            color: abstracts.$light-yellow
             &:hover
-                color: colors.$dark_green
+                color: abstracts.$dark_green
                 text-decoration: underline
