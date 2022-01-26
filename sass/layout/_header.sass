@@ -11,14 +11,13 @@ header
     background-color: abstracts.$dark_grey
 
     clip-path: polygon(0 0,100% 0 ,100% 75vh,0 100%)
+
+    @include abstracts.respond(phone)
+        clip-path: polygon(0 0,100% 0 ,100% 85vh,0 100%)
+
 .logo-box
     position: absolute
-    top: 40px
-    left: 40px
+    top: 3rem
+    left: 2rem
     &__logo
         height: 35px
-
-   
-
-
-
