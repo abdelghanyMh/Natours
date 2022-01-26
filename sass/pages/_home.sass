@@ -13,6 +13,8 @@ $transparen-amount: 0.2
         margin-top: -20vh
         .about-info__images
             padding: 0 5rem
+        @include abstracts.respond(tab-port)
+            padding: 20rem 0 25rem
 
     &-features
         padding: 20rem 0
@@ -22,23 +24,35 @@ $transparen-amount: 0.2
         background-position: top
 
         @extend %skew
+        @include abstracts.respond(tab-port)
+            padding: 15rem 0
+        @include abstracts.respond(phone)
+            padding: 10rem 0
 
     &-tours
+
         background-color: abstracts.$light_grey-1
         padding: 25rem 0 15rem 0
 
         margin-top: -78px
+        @include abstracts.respond(tab-port)
+            padding: 20rem 0 10rem 0
         .grid-container
             grid-template-columns: repeat( 3,25%)
             grid-template-rows: abstracts.$tour-rows-height
             grid-column-gap: 5%
             place-content: center
+            @include abstracts.respond(phone)
+                grid-template-columns: 70%
+                row-gap: 7rem
 
     &-stories
+
         padding: 5rem 0
         background-color: abstracts.$light_grey-1
 
         position: relative
+
     &-book
         padding: 12rem 0
         background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green)
@@ -48,14 +62,27 @@ $transparen-amount: 0.2
     margin-top: 4rem
     display: grid
     grid-template-columns: repeat( 2,1fr)
+    @include abstracts.respond(tab-port)
+        grid-template-columns: 1fr
+        row-gap: 7rem
 
 /*features grid style*/
 .features
     @extend .grid-container
     margin-right: 4rem
     margin-left: 4rem
+
     grid-template-columns: repeat(4, 21%)
-    column-gap: 61px
+    column-gap: 6rem
+    @include abstracts.respond(tab-port)
+        margin-right: 0
+        margin-left: 0
+
+        justify-content: center
+        column-gap: 2rem
+    @include abstracts.respond(phone)
+        grid-template-columns: 70%
+        row-gap: 7rem
 
 /*book section style*/
 
