@@ -1,19 +1,33 @@
-@use '../abstracts/colors'
+@use '../abstracts'
 
 .feature-box
-    background-color: rgba(colors.$white,.8 )
+
+    background-color: rgba(abstracts.$white,.8 )
     font-size: 1.5rem
     text-align: center
 
     padding: 1.9rem 0rem
     margin: 5%
     border-radius: 3px
-    box-shadow: 0 1.5rem 4rem rgba(colors.$dark,.15 )
+    box-shadow: 0 1.5rem 4rem rgba(abstracts.$dark,.15 )
     transition: all .2s
+    @include abstracts.respond(tab-port)
+        padding: 1rem
+    @include abstracts.respond(tab-port)
+        font-size: 2rem
+
     &__icon
+        padding-top: 1rem
         font-size: 6rem
         color: transparent
-        background-image: linear-gradient(to right,colors.$light_green,colors.$dark_green)
+        background-image: linear-gradient(to right,abstracts.$light_green,abstracts.$dark_green)
         -webkit-background-clip: text
+        @include abstracts.respond(tab-port)
+            font-size: 8rem
     &:hover
         transform: translateY(-1.5rem) scale(1.03)
+    &__text
+        @include abstracts.respond(tab-port)
+            font-weight: abstracts.get-fweight(bold)
+        @include abstracts.respond(tab-port)
+            font-weight: abstracts.get-fweight(regular)
