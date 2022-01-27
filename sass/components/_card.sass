@@ -44,6 +44,7 @@
     &:hover &__side--back
         transform: rotateY(0deg)
     //FRONT SIDE STYLE
+
     &__picture
         height: 40%
         background-blend-mode: screen
@@ -68,6 +69,8 @@
         right: 1rem
 
         width: 67%
+        @include abstracts.respond(tab-land)
+            width: 76%
     &__heading-span
         padding: 1rem 1.5rem
         box-decoration-break: clone
@@ -92,7 +95,9 @@
                 padding: 1rem
                 &:not(:last-child)
                     border-bottom: 1px solid abstracts.$light_grey-2
+
     //BACK SIDE  STYLE
+
     &__cta
         height: 67vh
 
@@ -108,3 +113,41 @@
         &-value
             font-size: 6rem
             font-weight: abstracts.get-fweight('medium')
+
+    // card style for tablet&mobile
+    @include abstracts.respond(tab-port)
+
+        height: auto
+        background-color: abstracts.$white
+        border-radius: 3px
+
+        &__side
+            position: relative
+            box-shadow: none
+            height: auto
+            border-radius: 0px
+
+            &--back
+                transform: rotateY(0deg)
+                clip-path: polygon( 0 15% , 100% 0 , 100% 100% , 0 100%)
+                padding: 3rem 0 0
+
+        &:hover &__side--front
+            transform: rotateY(0deg)
+
+        &__picture
+            height: 24rem
+
+        &__details
+            ul
+                li
+                    font-size: 2rem
+        &__cta
+            height: 26rem
+
+        &__price
+            &-only
+                font-size: 2rem
+
+            &-value
+                font-size: 5rem
