@@ -17,12 +17,15 @@ $default-fsize: 1.6rem
     grid-gap: 4rem
     grid-template-areas: 'logo logo' ' navigation copyright'
     grid-template-columns: repeat(2,.5fr)
+    & > *
+        margin-bottom:  4rem
 
     @include abstracts.respond(phone)
         grid-gap: 0
-        row-gap: 5rem
+        // row-gap: 5rem
         grid-template-columns: 100%
         grid-template-areas: 'logo logo' ' navigation navigation' 'copyright copyright'
+        padding: 5rem
         
     &__logo-box
         grid-area: logo
@@ -30,6 +33,9 @@ $default-fsize: 1.6rem
     &__logo
         width: 16rem
         height: auto
+        @include abstracts.respond(phone)
+            width: 10rem
+
     &__navigation,&__copyright
         position: relative
 
