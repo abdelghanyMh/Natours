@@ -1,5 +1,5 @@
 @use '../abstracts'
-$default-fsize: 1.6rem
+$btn-default-fsize: 1.6rem
 
 %btn-default-text-style
     text-transform: uppercase
@@ -23,7 +23,7 @@ $default-fsize: 1.6rem
         position: relative
 
         transition: all .2s
-        font-size: $default-fsize
+        font-size: $btn-default-fsize
 
     &:hover
         transform: translateY(-3px)
@@ -65,7 +65,7 @@ $default-fsize: 1.6rem
     &--text
         &,&:visited,&:link
             @extend %btn-default-text-style
-            font-size: $default-fsize
+            font-size: $btn-default-fsize
             display: inline-block
             color: abstracts.$dark_green
             padding: 3px
