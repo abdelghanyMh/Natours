@@ -10,9 +10,14 @@ $default-fsize: 1.6rem
         position: relative
         &-size
             display: flex
+            @include abstracts.respond(tab-port)
+                flex-direction: column
+                & > :not(:last-child)
+                    margin-bottom: 2rem
 
         &:not(:last-child)
             margin-bottom: 1.5rem
+
     &__label
         font-size: $default-fsize
         margin-left: 2rem
@@ -37,6 +42,7 @@ $default-fsize: 1.6rem
         display: block
         transition: all 0.3s
 
+        box-shadow: 0 0 .5rem rgba(abstracts.$dark , .5)
         &:focus
             outline: none
             box-shadow: 0 1rem 2rem rgba(abstracts.$dark,.1 )
