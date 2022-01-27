@@ -1,31 +1,49 @@
-@use '../abstracts/colors'
+@use '../abstracts'
 .composition
     position: relative
     &__photo
         width: 55%
-        box-shadow: 0 1.5rem 4rem rgba(colors.$dark,.4)
+        box-shadow: 0 1.5rem 4rem rgba(abstracts.$dark,.4)
         border-radius: 2px
         position: absolute
         z-index: 10
         transition: all .4s
         outline-offset: 7px
+        @include abstracts.respond(tab-port)
+            position: relative
+            float: left
+            width: 33.333333%
+            box-shadow: 0 1.5rem 2rem rgba(abstracts.$dark,.3)
+
         &--p1
             left: 0
             top: -1rem
+            @include abstracts.respond(tab-port)
+                top: 0
+
         &--p2
             right: 2rem
             top: 2rem
+            @include abstracts.respond(tab-port)
+                top: 0
+                right: 0
+                transform: scale(1.2)
+                z-index: 100000
 
         &--p3
             left: 13%
             top: 6rem
+            @include abstracts.respond(tab-port)
+                top: 0
+                left: 0
+
         &:hover
             z-index: 20
             box-shadow: 1px 5rem 7rem 20px rgb(0 0 0 / 40%)
             transform: scale(1.05) translateY(-.5rem)
-            outline: 13px solid colors.$dark_green
+            outline: 13px solid abstracts.$dark_green
 
-        &--p2:hover 
+        &--p2:hover
             z-index: 9999 //so that the image stack in front of the navigation button
 
     &:hover &__photo:not(:hover)
