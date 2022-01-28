@@ -49,6 +49,7 @@
         height: 40%
         background-blend-mode: screen
         background-size: cover
+        background-position: center
         clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%)
 
         &--1
@@ -114,13 +115,11 @@
             font-size: 6rem
             font-weight: abstracts.get-fweight('medium')
 
-    // card style for tablet&mobile
-    @include abstracts.respond(tab-port)
-
+    // card style for Tablet landscape
+    @include abstracts.respond(tab-land)
         height: auto
         background-color: abstracts.$white
         border-radius: 3px
-
         &__side
             position: relative
             box-shadow: none
@@ -134,16 +133,28 @@
 
         &:hover &__side--front
             transform: rotateY(0deg)
-
         &__picture
-            height: 24rem
+            height: 20rem
+        &__cta
+            height: 20rem
+            justify-content: flex-start
 
+        &__price
+            &-only
+                font-size: 2rem
+
+            &-value
+                font-size: 5rem
+                font-weight: 300
+
+    // card style for tablet&mobile
+    @include abstracts.respond(tab-port)
         &__details
             ul
                 li
                     font-size: 2rem
         &__cta
-            height: 26rem
+            height: 20rem
 
         &__price
             &-only

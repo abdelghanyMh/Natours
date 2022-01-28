@@ -493,7 +493,7 @@ header {
   -moz-perspective: 100rem;
   perspective: 100rem;
   position: relative;
-  height: 67vh;
+  height: 70vh;
 }
 .card__side {
   position: absolute;
@@ -504,7 +504,7 @@ header {
   text-align: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  height: 67vh;
+  height: 70vh;
   width: 100%;
   transition: all 1s ease;
   overflow: hidden;
@@ -534,6 +534,7 @@ header {
   height: 40%;
   background-blend-mode: screen;
   background-size: cover;
+  background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 .card__picture--1 {
@@ -606,7 +607,7 @@ header {
   font-size: 6rem;
   font-weight: 500;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 75em) {
   .card {
     height: auto;
     background-color: #fff;
@@ -627,13 +628,26 @@ header {
     transform: rotateY(0deg);
   }
   .card__picture {
-    height: 24rem;
+    height: 20rem;
   }
+  .card__cta {
+    height: 20rem;
+    justify-content: flex-start;
+  }
+  .card__price-only {
+    font-size: 2rem;
+  }
+  .card__price-value {
+    font-size: 5rem;
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .card__details ul li {
     font-size: 2rem;
   }
   .card__cta {
-    height: 26rem;
+    height: 20rem;
   }
   .card__price-only {
     font-size: 2rem;
@@ -962,12 +976,18 @@ button {
 }
 .section-tours .grid-container, .section-tours .features {
   grid-template-columns: repeat(3, 25%);
-  grid-template-rows: 67vh;
+  grid-template-rows: 70vh;
   grid-column-gap: 5%;
   place-content: center;
 }
+@media only screen and (max-width: 75em) {
+  .section-tours .grid-container, .section-tours .features {
+    grid-template-rows: none;
+  }
+}
 @media only screen and (max-width: 56.25em) {
   .section-tours .grid-container, .section-tours .features {
+    justify-content: space-evenly;
     grid-template-columns: 80%;
     grid-template-rows: none;
     row-gap: 7rem;

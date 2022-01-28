@@ -42,7 +42,10 @@ $transparen-amount: 0.2
             grid-template-rows: abstracts.$tour-rows-height
             grid-column-gap: 5%
             place-content: center
+            @include abstracts.respond(tab-land)
+                grid-template-rows: none
             @include abstracts.respond(tab-port)
+                justify-content: space-evenly
                 grid-template-columns: 80%
                 grid-template-rows: none
                 row-gap: 7rem
