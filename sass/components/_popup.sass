@@ -13,7 +13,7 @@
 
     opacity: 0
     visibility: hidden
-    transition: all .1s 
+    transition: all .1s
 
     &__content
         z-index: 3000
@@ -55,6 +55,7 @@
         -ms-hyphens: auto
         -webkit-hyphens: auto
         hyphens: auto
+        @include abstracts.respond(tab-land)
 
     &__close
         &:link,&:visited
@@ -72,3 +73,36 @@
     &:target &__content
         opacity: 1
         transform: translate(-50%, -50%) scale(1) rotate(0deg)
+
+    @include abstracts.respond(tab-land)
+        &__content
+            width: 95%
+        &__text
+            font-size: 1.5rem
+            font-weight: bolder
+            margin-bottom: 2rem
+        .heading-tertiary
+            font-size: 2rem !important
+    @include abstracts.respond(tab-port)
+        &__content
+            background-color: transparent
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-8.jpg)
+            background-size: cover
+            background-position: center
+            color: #333
+        &__left
+            display: none
+
+        &__right
+            width: auto
+        &__close
+            &:link,&:visited
+                right: 0
+                font-size: 4.5rem
+                padding: 0 2rem
+
+    @include abstracts.respond(phone)
+        &__content
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-9.jpg)
+        &__text
+            column-count: 1
