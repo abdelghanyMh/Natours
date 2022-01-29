@@ -71,12 +71,17 @@
                 </div>
                 <div class="about-info__images">
                     <div class="composition">
-                        <img src="dist/img/nat-1-large.jpg" alt="River "
-                            class="composition__photo composition__photo--p1">
-                        <img src="dist/img/nat-2-large.jpg" alt="Cycling in the nature"
-                            class="composition__photo composition__photo--p2">
-                        <img src="dist/img/nat-3-large.jpg" alt="hiking in the mountains"
-                            class="composition__photo composition__photo--p3">
+                        <img srcset="dist/img/nat-1.jpg 300w, dist/img/nat-1-large.jpg 1000w  "
+                            sizes="(max-width:900px) 30vw, (max-width:600px) 20vw, 300px" alt="River"
+                            class="composition__photo composition__photo--p1" src="dist/img/nat-1-large.jpg">
+
+                        <img srcset="dist/img/nat-2.jpg 300w, dist/img/nat-2-large.jpg 1000w  "
+                            sizes="(max-width:900px) 30vw, (max-width:600px) 20vw, 300px" alt="Cycling in the nature"
+                            class="composition__photo composition__photo--p2" src="dist/img/nat-2-large.jpg">
+
+                        <img srcset="dist/img/nat-3.jpg 300w, dist/img/nat-3-large.jpg 1000w  "
+                            sizes="(max-width:900px) 30vw, (max-width:600px) 20vw, 300px" alt="hiking in the mountains"
+                            class="composition__photo composition__photo--p3" src="dist/img/nat-3-large.jpg">
                     </div>
                 </div>
             </div>
@@ -243,7 +248,9 @@
             <div class="story">
 
                 <figure class="story__shape">
-                    <img src="dist/img/nat-8.jpg" alt="Person on a tour" class="story__img">
+                    <img srcset="dist/img/nat-8.jpg 300w, dist/img/nat-8-large.jpg 1000w"
+                        sizes="(max-width:900px) 28vw, (max-width:600px) 28vw, 300px" src="dist/img/nat-8-large.jpg "
+                        alt="Person on a tour" class="story__img">
                     <figcaption class="story__caption">Mary Smith</figcaption>
                 </figure>
                 <div class="story__text">
@@ -260,7 +267,9 @@
 
             <div class="story">
                 <figure class="story__shape">
-                    <img src="dist/img/nat-9.jpg" alt="Person on a tour" class="story__img">
+                    <img srcset="dist/img/nat-9.jpg 300w, dist/img/nat-9-large.jpg 1000w"
+                        sizes="(max-width:900px) 28vw, (max-width:600px) 28vw, 300px" src="dist/img/nat-9-large.jpg "
+                        alt="Person on a tour" class="story__img">
                     <figcaption class="story__caption">Jack Wilson</figcaption>
                 </figure>
                 <div class="story__text">
@@ -364,8 +373,10 @@
     <div class="popup" id="popup">
         <div class="popup__content">
             <div class="popup__left">
+                <!-- no need for RESOLUTION SWITCHING here because in tablet & phone devices this images will not be displayed  -->
                 <img src="dist/img/nat-8.jpg" alt="Tour photo" class="popup__img">
                 <img src="dist/img/nat-9.jpg" alt="Tour photo" class="popup__img">
+              
             </div>
             <div class="popup__right">
                 <a href="#section-tours" class="popup__close">&times;</a>
