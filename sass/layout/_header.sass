@@ -5,12 +5,15 @@ header
     position: relative
     height: 95vh
 
-    background-image: linear-gradient(to right bottom,transparentize(abstracts.$light_green,$transparen-amount),transparentize(abstracts.$dark_green,$transparen-amount)), url(../img/hero.jpg)
+    background-image: linear-gradient(to right bottom,rgba(abstracts.$light_green,.9),rgba(abstracts.$dark_green,.9)), url(../img/hero-small.jpg)
     background-size: cover
     background-position: top
     background-color: abstracts.$dark_grey
 
     clip-path: polygon(0 0,100% 0 ,100% 75vh,0 100%)
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em)
+        background-image: linear-gradient(to right bottom,rgba(abstracts.$light_green,.9),rgba(abstracts.$dark_green,.9)),url(../img/hero.jpg)
 
     @include abstracts.respond(phone)
         clip-path: polygon(0 0,100% 0 ,100% 85vh,0 100%)

@@ -53,11 +53,20 @@
         clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%)
 
         &--1
-            background-image: linear-gradient(to right bottom,abstracts.$light-orange,abstracts.$regular-orange), url(../img/nat-5.jpg)
+            background-image: linear-gradient(to right bottom,abstracts.$light-orange,abstracts.$regular-orange), url(../img/nat-5-small.jpg)
+
         &--2
-            background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green),url(../img/nat-6.jpg)
+            background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green),url(../img/nat-6-small.jpg)
         &--3
-            background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry),url(../img/nat-7.jpg)
+            background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry),url(../img/nat-7-small.jpg)
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em)
+            &--1
+                background-image: linear-gradient(to right bottom,abstracts.$light-orange,abstracts.$regular-orange), url(../img/nat-5.jpg)
+
+            &--2
+                background-image: linear-gradient(to right bottom,abstracts.$light_green,abstracts.$dark_green),url(../img/nat-6.jpg)
+            &--3
+                background-image: linear-gradient(to right bottom,abstracts.$light-blue,abstracts.$regular-blueberry),url(../img/nat-7.jpg)
     &__heading
         font-size: 2.8rem
         font-weight: 300

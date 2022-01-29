@@ -19,11 +19,14 @@ $transparen-amount: 0.2
     &-features
         padding: 20rem 0
 
-        background-image: linear-gradient(to right bottom,transparentize(abstracts.$light_green,$transparen-amount),transparentize(abstracts.$dark_green,$transparen-amount)), url(../img/nat-4.jpg)
+        background-image: linear-gradient(to right bottom,rgba(abstracts.$light_green,.9),rgba(abstracts.$dark_green,.9)), url(../img/nat-4-small.jpg)
         background-size: cover
         background-position: top
-
         @extend %skew
+
+        @media (min-resolution: 192dpi) and ( min-width: 37.5em),( min-width: 125em)
+            background-image: linear-gradient(to right bottom,rgba(abstracts.$light_green,.9),rgba(abstracts.$dark_green,.9)), url(../img/nat-4.jpg)
+
         @include abstracts.respond(tab-port)
             padding: 15rem 0
         @include abstracts.respond(phone)
@@ -92,15 +95,22 @@ $transparen-amount: 0.2
 .book
     width: 86%
     margin: 0 auto
-    background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 50%,transparent 50%), url('../img/nat-10.jpg')
+    background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 50%,transparent 50%), url('../img/nat-10-small.jpg')
     background-size: cover
     border-radius: 3px
     box-shadow: 0 1.15rem 4rem rgba(abstracts.$dark ,.15 )
+
     @include abstracts.respond(tab-port)
-        background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 60%,transparent 60%), url('../img/nat-10.jpg')
+        background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 60%,transparent 60%), url('../img/nat-10-small.jpg')
 
     @include abstracts.respond(phone)
-        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg), url('../img/nat-10.jpg')
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg), url('../img/nat-10-small.jpg')
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em)
+        background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 60%,transparent 60%), url('../img/nat-10.jpg')
+
+    @media  (min-width: 125em)
+        background-image: linear-gradient(105deg,rgba(abstracts.$white,.9) 0%,rgba(abstracts.$white,.9) 50%,transparent 50%), url('../img/nat-10.jpg')
 
     &__form
         padding: 5rem
