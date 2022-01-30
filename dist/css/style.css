@@ -12,14 +12,20 @@
  *      1em = 16px */
 header {
   position: relative;
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.9)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   background-color: #777;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+@supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+  header {
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+}
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
   header {
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.9)), url(../img/hero.jpg);
   }
@@ -692,7 +698,9 @@ header {
 }
 @media only screen and (max-width: 37.5em) {
   .story {
+    text-align: center;
     width: 85%;
+    padding: 2rem 4rem 3rem;
     transform: skewX(0deg);
   }
   .story > * {
@@ -703,15 +711,32 @@ header {
   width: 15rem;
   height: 15rem;
   float: left;
+  margin-right: 2rem;
   -webkit-shape-outside: circle(50% at 50% 50%);
   shape-outside: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
   transform: translateX(-1.5rem) skewX(12deg);
   position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+@supports (-webkit-shape-outside: polygon(0 0)) or (shape-outside: polygon(0 0)) {
+  .story__shape {
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+  }
+}
+@supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+  .story__shape {
+    margin-right: 2rem;
+    border-radius: none;
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+  }
 }
 @media only screen and (max-width: 37.5em) {
   .story__shape {
+    float: none;
+    margin: 0 auto 2rem;
     transform: translateX(-1.5rem) skewX(0deg);
   }
 }
@@ -879,10 +904,17 @@ button {
   z-index: 3000;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
   transition: all 0.1s;
+}
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+  .popup {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 }
 .popup__content {
   z-index: 3000;
@@ -908,6 +940,9 @@ button {
   width: 66.6666%;
   padding: 14px 3rem;
 }
+.popup .heading-tertiary {
+  font-size: 2rem;
+}
 .popup__img {
   width: 100%;
   object-fit: cover;
@@ -916,6 +951,7 @@ button {
 }
 .popup__text {
   margin-bottom: 1rem;
+  font-size: 1.5rem;
   column-count: 2;
   column-rule: 1px solid #999;
   column-gap: 2rem;
