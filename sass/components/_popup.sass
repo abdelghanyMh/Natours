@@ -8,12 +8,16 @@
 
     width: 100vw
     height: 100vh
-
-    backdrop-filter: blur(10px)
+    background-color: rgba(abstracts.$dark , .7)
 
     opacity: 0
     visibility: hidden
     transition: all .1s
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+        -webkit-backdrop-filter: blur(10px)
+        backdrop-filter: blur(10px)
+        background-color: rgba(abstracts.$dark , .2)
 
     &__content
         z-index: 3000
@@ -39,7 +43,8 @@
     &__right
         width: 66.6666%
         padding: 14px 3rem
-
+    .heading-tertiary
+        font-size: 2rem
     &__img
         width: 100%
         object-fit: cover
@@ -48,6 +53,7 @@
 
     &__text
         margin-bottom: 1rem
+        font-size: 1.5rem
 
         column-count: 2
         column-rule: 1px solid abstracts.$dark_grey_2
@@ -83,6 +89,7 @@
             margin-bottom: 2rem
         .heading-tertiary
             font-size: 2rem !important
+
     @include abstracts.respond(tab-port)
         &__content
             background-color: transparent
