@@ -16,7 +16,9 @@
     & > *
         transform: skewX(12deg)
     @include abstracts.respond(phone)
+        text-align: center
         width: 85%
+        padding: 2rem 4rem 3rem
         transform: skewX(0deg)
         & > *
             transform: skewX(0deg)
@@ -26,15 +28,28 @@
         height: 15rem
 
         float: left
+        margin-right: 2rem
         -webkit-shape-outside: circle(50% at 50% 50%)
         shape-outside: circle(50% at 50% 50%)
 
-        clip-path: circle(50% at 50% 50%)
-        -webkit-clip-path: circle(50% at 50% 50%)
         transform: translateX(-1.5rem) skewX(12deg)
-
         position: relative
+        overflow: hidden
+        border-radius: 50%
+
+        @supports (-webkit-shape-outside: polygon(0 0)) or ( shape-outside: polygon(0 0) )
+            -webkit-shape-outside: circle(50% at 50% 50%)
+            shape-outside: circle(50% at 50% 50%)
+        @supports (-webkit-clip-path: polygon(0 0)) or ( clip-path: polygon(0 0) )
+            margin-right: 2rem
+            border-radius: none
+            clip-path: circle(50% at 50% 50%)
+            -webkit-clip-path: circle(50% at 50% 50%)
+
         @include abstracts.respond(phone)
+            float: none
+            margin: 0 auto 2rem
+
             transform: translateX(-1.5rem) skewX(0deg)
 
     &__img
