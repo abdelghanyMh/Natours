@@ -46,7 +46,7 @@
     &__nav
         height: 100vh
 
-        width: 0%
+        max-width: 0px
         opacity: 0
 
         position: fixed
@@ -69,7 +69,7 @@
 
     &__link
         &:link,&:visited
-            display: inline-block
+            display: none
             padding: 1rem 2rem
 
             font-size: 3rem
@@ -97,10 +97,13 @@
         transform: scale(1000)
 
     &__checkbox:checked ~ &__nav
-        width: 100%
+        min-width: 100%
         opacity: 1
         .navigation__item
             transform: translateX(0)
+        .navigation__link
+            &:link,&:visited
+                display: inline-block
 
     &__icon
         @include abstracts.absCenter()
