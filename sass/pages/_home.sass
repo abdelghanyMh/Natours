@@ -1,5 +1,5 @@
 @use '../abstracts'
-$transparen-amount: 0.2
+
 %skew
     transform: skewY(-7deg)
     margin-top: -9rem
@@ -13,6 +13,7 @@ $transparen-amount: 0.2
         margin-top: -20vh
         .about-info__images
             padding: 0 5rem
+            @include abstracts.support-row-gap()
         @include abstracts.respond(tab-port)
             padding: 20rem 0 25rem
 
@@ -29,6 +30,7 @@ $transparen-amount: 0.2
 
         @include abstracts.respond(tab-port)
             padding: 15rem 0
+
         @include abstracts.respond(phone)
             padding: 10rem 0
 
@@ -73,7 +75,7 @@ $transparen-amount: 0.2
         grid-template-columns: 1fr
         row-gap: 7rem
 
-/*features grid style*/
+/*features  style*/
 .features
     @extend .grid-container
     margin-right: 4rem
@@ -89,6 +91,10 @@ $transparen-amount: 0.2
 
         grid-template-columns: 70%
         row-gap: 7rem
+
+// support row-grip
+.feature-container
+    @include abstracts.support-row-gap()
 
 /*book section style*/
 

@@ -5,6 +5,12 @@
     -moz-perspective: 100rem
     perspective: 100rem
 
+    // support row-gap & grid-template-rows
+    @include abstracts.support-row-gap($gap-size:8rem)
+        max-width: 80%
+        margin-left: auto
+        margin-right: auto
+
     position: relative
     height: abstracts.$tour-rows-height
 

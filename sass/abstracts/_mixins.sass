@@ -73,3 +73,10 @@
     @if $breakpoint == big-desktop
         @media only screen and ( min-width: 112.4em  )
             @content
+
+
+// support row-gap for older browser by replacing it with margin
+@mixin support-row-gap($gap-size:7rem)
+    @supports not (row-gap: 7rem)
+        margin-top: $gap-size
+        @content
