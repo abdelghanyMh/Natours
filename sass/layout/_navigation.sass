@@ -36,7 +36,7 @@
         width: 2rem
 
         border-radius: 50%
-        background-image: radial-gradient(abstracts.$light_green,abstracts.$dark_green)
+        background-image: radial-gradient(abstracts.$dark_green 10%, abstracts.$light_green 50%)
         z-index: 1000
         transition: all .5s ease-in-out
         @include abstracts.respond(tab-port)
@@ -91,10 +91,14 @@
             color: abstracts.$dark_green
             transform: translateX(.5rem)
 
+        &:active
+            .navigation__background
+                transform: scale(0)
+
         // this way we used checkbox
 
     &__checkbox:checked ~ &__background
-        transform: scale(1000)
+        transform: scale(300)
 
     &__checkbox:checked ~ &__nav
         min-width: 100%
@@ -139,3 +143,4 @@
 @for $i from 1 through 5
     .navigation__item:nth-child(#{$i})
         transition-delay: ($i*0.1s)
+
