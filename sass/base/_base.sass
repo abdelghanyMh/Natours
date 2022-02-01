@@ -5,6 +5,7 @@
     margin: 0
     padding: 0
 
+    
 html
     scroll-behavior: smooth
     
@@ -26,3 +27,7 @@ body
 
     @include abstracts.respond(tab-port)
         padding: 0
+
+::selection
+    background-color: abstracts.$dark_green
+    color: abstracts.$white
