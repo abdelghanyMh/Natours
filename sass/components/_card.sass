@@ -12,7 +12,6 @@
         margin-right: auto
 
     position: relative
-    height: abstracts.$tour-rows-height
 
     &__side
         position: absolute
@@ -27,7 +26,6 @@
         -webkit-backface-visibility: hidden
         backface-visibility: hidden
 
-        height: abstracts.$tour-rows-height
 
         width: 100%
         transition: all 1s ease
@@ -131,7 +129,8 @@
             font-weight: abstracts.get-fweight('medium')
 
     // card style for Tablet landscape
-    @include abstracts.respond(tab-land)
+    @media only screen and (max-width: 75em),only screen and (hover:none)
+
         height: auto
         background-color: abstracts.$white
         border-radius: 3px

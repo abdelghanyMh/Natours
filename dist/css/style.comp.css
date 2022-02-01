@@ -510,7 +510,6 @@ header {
   -moz-perspective: 100rem;
   perspective: 100rem;
   position: relative;
-  height: 70vh;
 }
 @supports not (row-gap: 7rem) {
   .card {
@@ -529,7 +528,6 @@ header {
   text-align: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  height: 70vh;
   width: 100%;
   transition: all 1s ease;
   overflow: hidden;
@@ -643,7 +641,7 @@ header {
   font-size: 6rem;
   font-weight: 500;
 }
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 75em), only screen and (hover: none) {
   .card {
     height: auto;
     background-color: #fff;
@@ -1099,7 +1097,6 @@ button {
 }
 .section-tours .grid-container, .section-tours .features {
   grid-template-columns: repeat(3, 25%);
-  grid-template-rows: 70vh;
   grid-column-gap: 5%;
   place-content: center;
 }
