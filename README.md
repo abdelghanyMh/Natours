@@ -7,8 +7,8 @@ Natours  is A website ,unlike a landing page for Finctional company that offers 
 
 ## ✨ Demo
 
-![Mobile Layout]()
-![TAblet Layout]()
+![desktop demo](natours_desktop.gif)
+![mobile demo](natours_mobile.gif)
 
 ## 🚀 Usage
 1. Clone the Repository  
