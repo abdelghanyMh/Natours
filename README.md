@@ -1,7 +1,10 @@
 ﻿
 <h1 align="center">Welcome to Natours Page 👋</h1>
 
-Natours  is A website ,unlike a landing page for Finctional company that offers tours in the nature,  made by _following_  [Jonas Schmedtmann](https://www.udemy.com/user/jonasschmedtmann/) [Cours](https://www.udemy.com/advanced-css-and-sass/?couponCode=GITHUB4)
+![soutour](https://github.com/abdelghanyMh/Natours/assets/33175196/9866f4e6-07e7-461e-8829-c3841d31c872)
+
+Natours  is A website ,unlike a landing page for Finctional company that offers tours in the nature.
+
 
 ### 🏠 [Homepage](https://abdelghanymh.github.io/Natours/)
 
@@ -17,7 +20,7 @@ Natours  is A website ,unlike a landing page for Finctional company that offers 
 	> cd Natours
 
 # :warning: Copyright	:warning:	
-- You are 100% allowed to use this webpage for both personal and commercial use, **but NOT to claim it as your own design.** A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
+- You are 100% allowed to use this webpage for both personal and commercial use, **but NOT to claim it as your own design.** 
 - Designed by [Jonas Schmedtmann](https://www.udemy.com/user/jonasschmedtmann/)
 - 
 ## Built with
